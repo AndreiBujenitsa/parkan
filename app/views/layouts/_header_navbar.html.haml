@@ -1,0 +1,27 @@
+%header
+  #navbarHeader.collapse.bg-dark
+    .container
+      .row
+        .col-sm-8.col-md-7.py-4
+          %h4.text-white Паркан PRO
+          %p.text-muted 
+            Мы занимается производством  <span class='text-success'>евроштакетника </span> для  забора и не только.
+            Наш штакетник выгодно отделит Вас от Ваших соседей <span class='text-info'>стильным</span> и <span class='text-info'>богатым</span> видом, и подчеркнет уникальность Вашего выбора.
+        .col-sm-4.offset-md-1.py-4
+          %h4.text-white контакты:
+          %ul.list-unstyled
+            %li
+              = image_tag("phone-icon.svg", style: 'width: 17px')
+              %a.text-white{:href => "tel:(099)-065-0068"} (099)-065-0068
+            %li
+              = image_tag("instagram-icon.svg", style: 'width: 20px')
+              %a.text-white{:href => "#"} Instagram
+            %li
+              %a.text-white{:href => "#"} Email me
+  .navbar.navbar-dark.bg-dark.box-shadow
+    .container.d-flex.justify-content-between
+      %a.navbar-brand.d-flex.align-items-center{:href => "#"}
+        = image_tag("white-fence.svg", style: "width: 30px")
+        %strong Паркан pro
+      %button.navbar-toggler{"aria-controls" => "navbarHeader", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarHeader", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon

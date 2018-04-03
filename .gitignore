@@ -80,3 +80,5 @@ pickle-email-*.html
 xerial*.*
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
