@@ -2,9 +2,24 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Zabor
+    %title Штакетник
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag "favicon.png"
   %body
-    = yield
+    = render "/layouts/header_navbar"
+    %main{:role => "main"}
+      %section.jumbotron.text-center
+        .container
+          %h1.jumbotron-heading О нас
+          %p.lead.text-muted
+            У нас Вы найдете самый 
+            %span.text-primary качественный
+            ,
+            %span.text-info стильный 
+            штакетник по 
+            %span.text-success выгодным 
+            ценам.
+            
+          %h1 Тел: (099)-065-0068
