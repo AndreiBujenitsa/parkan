@@ -1,0 +1,41 @@
+:javascript
+  (function() {
+      var params = {
+          order_id: "my order",
+          tariffs: {
+              [1]: "param1",
+              [2]: "param2"
+          },
+          lastCookieWin: true
+      }
+      function d(g) {
+          var f = g + '=';
+          var e = document.cookie.split(';');
+          for (var h = 0; h < e.length; h++) {
+              var j = e[h].trim();
+              if (j.indexOf(f) == 0) {
+                  return j.substring(f.length, j.length)
+              }
+          }
+          return ''
+      }
+      function a(g) {
+          var tp = [];
+          for (var p in g.tariffs) {
+              if (g.tariffs.hasOwnProperty(p)) {
+                  tp.push(p + '_' + g.tariffs[p]);
+              }
+          }
+          var t_str = tp.join('-');
+          var f = 'id=' + g.id + '-' + t_str + '&order_id=' + g.order_id
+          var e = new Image();
+          e.src = g.schema + '://rdr.salesdoubler.com.ua/reg?' + f;
+          return e
+      }
+      if (params.lastCookieWin == true && !/salesdoubler/i.test(d('utm_source'))) return;
+      params.id = d("aff_sub");
+      if (String(params.id).length > 7) {
+          params.schema = /^https:/.test(document.location.href) ? 'https' : 'http';
+          a(params);
+      }
+  })();
